@@ -16,7 +16,6 @@ import java.util.UUID;
 @Setter
 @Getter
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @JdbcType(VarcharJdbcType.class)
@@ -45,4 +44,5 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
+
 }
