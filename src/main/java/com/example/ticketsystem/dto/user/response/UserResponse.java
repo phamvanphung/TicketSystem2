@@ -19,7 +19,6 @@ public class UserResponse {
 
     private String id;
     private String fullname;
-    private String username;
     private String email;
     private String phone;
     private String address;
@@ -34,7 +33,6 @@ public class UserResponse {
     public UserResponse(User user) {
         this.id = user.getId().toString();
         this.fullname = user.getFullname();
-        this.username = user.getUsername();
         this.email = user.getEmail();
         this.phone = user.getPhone();
         this.address = user.getAddress();

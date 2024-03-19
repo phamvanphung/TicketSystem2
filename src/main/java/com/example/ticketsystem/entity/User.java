@@ -23,8 +23,6 @@ public class User {
 
     @Column(name = "fullname")
     private String fullname;
-    @Column(name = "username")
-    private String username;
     @Column(name = "password")
     private String password;
     @Column(name = "email")
@@ -44,5 +42,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
+
+    private String otp;
 
 }

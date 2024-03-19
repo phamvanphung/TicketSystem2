@@ -21,7 +21,7 @@ public class UserRegisterRequest {
     private String email;
     private String phone;
     private String address;
-    private LocalDateTime dob;
+    private String  dob; // format dd/MM/yyyy
     private boolean gender;
 
 }
