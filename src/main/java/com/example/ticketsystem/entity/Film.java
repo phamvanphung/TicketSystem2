@@ -9,6 +9,7 @@ import org.hibernate.annotations.JdbcType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -43,8 +44,8 @@ public class Film {
     private int price;
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "film")
-    private List<SuatChieu> suatChieuList;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<SuatChieu> suatChieuList = new ArrayList<>();
 
 
 }

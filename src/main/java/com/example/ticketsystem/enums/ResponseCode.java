@@ -23,6 +23,20 @@ public enum ResponseCode {
 
 
 
+
+    SUAT_CHIEU_ADD_FAILED(10201,"Suat chieu add failed"),
+    SUAT_CHIEU_NOT_FOUND(10202,"Suat chieu not found"),
+
+
+
+    FILM_NOT_FOUND(10301,"Film not found"),
+    FILM_EXISTED(10302,"Film existed"),
+
+
+
+
+
+
     ;
     private final int code;
     private final String message;
