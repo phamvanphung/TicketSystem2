@@ -7,6 +7,8 @@ import com.example.ticketsystem.dto.user.request.UserUpdateRequest;
 import com.example.ticketsystem.dto.user.request.UserVerifyRequest;
 import com.example.ticketsystem.dto.user.response.UserResponse;
 
+import java.util.List;
+
 public interface UserService {
 
     ApiResponse<UserResponse> register(UserRegisterRequest request);
@@ -15,5 +17,8 @@ public interface UserService {
     ApiResponse<CommonStatusResponse> changeStatus(String id);
 
     ApiResponse<CommonStatusResponse> verifyOtpRegister(UserVerifyRequest request);
+
+
+    ApiResponse<List<UserResponse>> getAll();
 
 }

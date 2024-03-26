@@ -25,4 +25,9 @@ public class CommonUtils {
         int r = random.nextInt(999998) + 1;
         return String.format("%06d",r);
     }
+
+    public static String getCodeVoucher() {
+        long r = random.nextLong(999999998) + 1;
+        return String.format("%09d",r);
+    }
 }

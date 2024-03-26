@@ -32,8 +32,12 @@ public enum ResponseCode {
     FILM_NOT_FOUND(10301,"Film not found"),
     FILM_EXISTED(10302,"Film existed"),
 
+    VOUCHER_NOT_FOUND(10401,"Voucher Not Found"),
+    VOUCHER_USED(10402,"Voucher used"),
+    VOUCHER_USER_DO_NOT_PERMISSION(10403,"Voucher user do not permission"),
 
 
+    ORDERS_NOT_FOUND(10501, "Order not found"),
 
 
 

@@ -15,6 +15,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @Slf4j
 public class UserController implements IUserController {
@@ -53,5 +55,12 @@ public class UserController implements IUserController {
     public ResponseEntity<ApiResponse<CommonStatusResponse>> verifyRegister(UserVerifyRequest request) {
         ApiResponse<CommonStatusResponse> response = userService.verifyOtpRegister(request);
         return new ResponseEntity<ApiResponse<CommonStatusResponse>>(response, HttpStatus.OK);
+    }
+
+
+    @Override
+    public ResponseEntity<ApiResponse<List<UserResponse>>> getList() {
+        ApiResponse<List<UserResponse>> response = userService.getAll();
+        return new ResponseEntity<ApiResponse<List<UserResponse>>>(response, HttpStatus.OK);
     }
 }

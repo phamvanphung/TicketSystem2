@@ -22,10 +22,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -176,6 +174,22 @@ public class UserServiceImpl implements UserService {
             user.setInactive(false);
             user = userRepository.save(user);
             return new ApiResponse<CommonStatusResponse>().ok(new CommonStatusResponse(true));
+        } catch (BusinessException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error(e.getLocalizedMessage());
+            throw new BusinessException(ResponseCode.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
+    @Override
+    public ApiResponse<List<UserResponse>> getAll() {
+        try {
+           List<User> userList = userRepository.findAll();
+           List<UserResponse> userResponseList = userList.stream().map(UserResponse::new).collect(Collectors.toList());
+           return new ApiResponse<List<UserResponse>>().ok(userResponseList);
+
         } catch (BusinessException e) {
             throw e;
         } catch (Exception e) {

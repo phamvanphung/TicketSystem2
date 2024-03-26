@@ -10,6 +10,8 @@ import com.example.ticketsystem.dto.user.response.UserResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/user/v1")
 public interface IUserController {
 
@@ -33,4 +35,8 @@ public interface IUserController {
 
     @PostMapping("/verify")
     ResponseEntity<ApiResponse<CommonStatusResponse>> verifyRegister(@RequestBody UserVerifyRequest request);
+
+
+    @GetMapping("/v1/all")
+    ResponseEntity<ApiResponse<List<UserResponse>>> getList();
 }

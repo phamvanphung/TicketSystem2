@@ -3,6 +3,7 @@ package com.example.ticketsystem.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.JdbcType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Table(name = "voucher")
 @Setter
 @Getter
+@Accessors(chain = true)
 public class Voucher {
 
 
