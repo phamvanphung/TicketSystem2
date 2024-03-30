@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @ToString
 public class OrderResponse {
     private String id;
-    private User user;
+    private String userId;
     private Voucher voucher;
     private Film film;
     private int quality;
@@ -28,7 +28,7 @@ public class OrderResponse {
 
     public OrderResponse(Order order) {
         this.id = order.getId().toString();
-        this.user = order.getUser();
+        this.userId = order.getUser().getId().toString();
         this.voucher = order.getVoucher();
         this.film = order.getFilm();
         this.quality = order.getQuality();

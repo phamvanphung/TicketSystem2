@@ -132,7 +132,7 @@ public class FilmServiceImpl  implements FilmService {
             }
             List<SuatChieu> lis = new ArrayList<>();
 
-            if(!request.getSuatChieuList().isEmpty()) {
+            if(Objects.nonNull(request.getSuatChieuList()) && !request.getSuatChieuList().isEmpty()) {
                 for (String id : request.getSuatChieuList()) {
                     SuatChieu suatChieu = suatChieuRepository.findById(UUID.fromString(id)).orElse(null);
                     if (Objects.nonNull(suatChieu)) {
@@ -145,6 +145,7 @@ public class FilmServiceImpl  implements FilmService {
             }
 
 
+            filmRepository.save(film);
             return new ApiResponse<FilmResponse>().ok(new FilmResponse(film));
 
         } catch (BusinessException e) {

@@ -37,7 +37,10 @@ public enum ResponseCode {
     VOUCHER_USER_DO_NOT_PERMISSION(10403,"Voucher user do not permission"),
 
 
+
     ORDERS_NOT_FOUND(10501, "Order not found"),
+    ORDERS_PROCESS_INVALID(10502, "Order process invalid"),
+    ORDERS_HASH_VALUE_FAILED(10503, "Order hash value failed"),
 
 
 

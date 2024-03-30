@@ -4,6 +4,7 @@ import com.example.ticketsystem.enums.Method;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.JdbcType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
@@ -14,6 +15,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Table(name = "transaction")
+@Accessors(chain = true)
 public class Transaction {
 
     @Id
@@ -21,7 +23,7 @@ public class Transaction {
     @JdbcType(VarcharJdbcType.class)
     private UUID id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "orders_id", referencedColumnName = "id")
     private Order order;
 
@@ -35,4 +37,6 @@ public class Transaction {
     private Method method;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    private String transactionIdVnp;
 }
